@@ -6,6 +6,7 @@ import { connectDB } from './lib/db.js';
 import userRouter from './routes/userRoutes.js';
 import messageRouter from './routes/messageRoutes.js';
 import { Server } from "socket.io";
+import { io, userSocketMap } from '../server.js'; // adjust relative path
 
 // dotenv.config();
 
@@ -16,7 +17,11 @@ const server = http.createServer(app);
 //Initializa socket.io server
 
 export const io = new Server(server, {
-    cors: {origin: "*"}
+    cors: {
+        origin: "http://localhost:5173",
+        credentials: true
+    }
+
 })
 
 ///Store online users

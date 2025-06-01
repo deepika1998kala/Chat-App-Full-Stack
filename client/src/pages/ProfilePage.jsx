@@ -20,7 +20,7 @@ const ProfilePage = () => {
       return;
     }
 
-    const reader = new FileRender();
+    const reader = new FileReader();
     reader.readAsDataURL(selectedImg);
     reader.onload = async ()=>{
       const base64Image = reader.result;
