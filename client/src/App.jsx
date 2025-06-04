@@ -13,7 +13,9 @@ const App = () => {
 
   return (
 
-    <div className="bg-[url('/bgImage.svg')] bg-contain">
+    // <div className="bg-[url('/bgImage.svg')] bg-contain">
+    <div className="bg-gray-900">
+    {/* <div className="bg-[url('https://www.transparenttextures.com/patterns/dark-mosaic.png')] bg-gray-900 bg-repeat"> */}
       <Toaster />
       <Routes>
 

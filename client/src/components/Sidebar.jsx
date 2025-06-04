@@ -25,7 +25,7 @@ const Sidebar = () => { //Check this too
     <div className={`bg-[#818582]/10 h-full p-5 rounded-r-xl overflow-y-scroll text-white ${selectedUser ? "max-md:hidden" : ''}`}>
       <div className='pb-5'>
         <div className='flex justify-between items-center'>
-          <img src={img.logo} alt="logo" className='max-w-40' />
+          <div className='flex'><img src={img.logo} alt="logo" className='max-w-15' /><p className='text-xl pt-2'>ChatBox</p></div>
           <div className="relative py-2 group">
             <img src={img.menu_icon} alt="menu" className='max-h-5 cursor-pointer' />
             <div className='absolute top-full right-0 z-20 w-32 p-5 rounded-md bg-[#282142] border border-gray-600 text-gray-100 hidden group-hover:block'>
@@ -36,7 +36,7 @@ const Sidebar = () => { //Check this too
             </div>
           </div>
         </div>
-        <div className='bg-[#282142] rounded-full flex items-center gap-2 py-3 px-4 mt-5'>
+        <div className='bg-gray-900 rounded-full flex items-center gap-2 py-3 px-4 mt-5'>
           <img src={img.search_icon} alt="Search" className='w-3' />
           <input
             onChange={(e) => setInput(e.target.value)}
@@ -54,7 +54,7 @@ const Sidebar = () => { //Check this too
               setUnseenMessages((prev) => ({ ...prev, [user._id]: 0 }));
             }}
             key={user._id}
-            className={`relative flex items-center gap-2 p-2 pl-4 rounded cursor-pointer max-sm:text-sm ${selectedUser?._id === user._id ? 'bg-[#282142]/50' : ''}`}
+            className={`relative flex items-center gap-2 p-2 pl-4 rounded cursor-pointer max-sm:text-sm ${selectedUser?._id === user._id ? 'bg-gray-900/50' : ''}`}
           >
             <img src={user?.profilePic || img.avatar_icon} alt=""
               className='w-[35px] aspect-[1/1] rounded-full' />

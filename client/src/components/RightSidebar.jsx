@@ -7,14 +7,27 @@ const RightSidebar = () => {
   const { selectedUser, messages } = useContext(ChatContext);
   const { logout, onlineUsers } = useContext(AuthContext);
   const [msgImages, setMsgImages] = useState([]);
+  const [msgDocs, setMsgDocs] = useState([]);
 
   useEffect(() => {
     if (messages) {
-      setMsgImages(
-        messages.filter(msg => msg.image).map(msg => msg.image)
-      );
+      // For Media (Images)
+      const images = messages
+        .filter(msg => msg.image || (msg.file && msg.file.type.startsWith("image/")))
+        .map(msg => msg.image ? msg.image : msg.file.url);
+      setMsgImages(images);
+
+      // For Docs (Non-image files)
+      const docs = messages
+        .filter(msg => msg.file && !msg.file.type.startsWith("image/"))
+        .map(msg => ({
+          name: msg.file.name,
+          url: msg.file.url,
+        }));
+      setMsgDocs(docs);
     }
   }, [messages]);
+
 
   if (!selectedUser) return null;
 
@@ -39,9 +52,29 @@ const RightSidebar = () => {
           ))}
         </div>
       </div>
+      <hr className="border-[#ffffff50] my-4" />
+      <div className="px-5 text-xs">
+        <p>Docs</p>
+        <div className="mt-2 max-h-[200px] overflow-y-scroll grid grid-cols-2 gap-4 opacity-80">
+          {msgDocs.map((file, index) => (
+            <a
+              key={index}
+              href={file.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-300 underline truncate flex items-center gap-2"
+            >
+              📄 {file.name}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <hr className="border-[#ffffff50] my-4" />
+      
       <button
         onClick={() => logout()}
-        className="absolute bottom-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-400 to-violet-600 text-white border-none text-sm font-light py-2 px-20 rounded-full cursor-pointer"
+        className="absolute bottom-5 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-gray-400 to-blue-900 text-white border-none text-sm font-light py-2 px-20 rounded-full cursor-pointer"
       >
         Logout
       </button>
