@@ -107,7 +107,7 @@ const LoginPage = () => {
         <button
           type='Submit'
           disabled={currState === "Sign Up" && !isPasswordValid}
-          className={`py-3 bg-gradient-to-r from-purple-400 to-violet-600
+          className={`py-3 bg-gradient-to-r from-blue-400 to-blue-600
           text-white rounded-md ${currState === "Sign Up" && !isPasswordValid ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}>
           {currState === "Sign Up" ? "Create Account" : "Login Now"}
         </button>
@@ -120,10 +120,10 @@ const LoginPage = () => {
         <div className='flex flex-col gap-2'>
           {currState === "Sign Up" ? (
             <p className='text-sm text-gray-600'>Already have an account?
-              <span onClick={() => { setCurrState("Login"); setIsDataSubmitted(false) }} className='font-medium text-violet-500 cursor-pointer'> Login here</span></p>
+              <span onClick={() => { setCurrState("Login"); setIsDataSubmitted(false) }} className='font-medium text-blue-500 cursor-pointer'> Login here</span></p>
           ) : (
             <p className='text-sm text-gray-600'>Create an account
-              <span onClick={() => { setCurrState("Sign Up"); setIsDataSubmitted(false) }} className='font-medium text-violet-500 cursor-pointer'> Click Here</span></p>
+              <span onClick={() => { setCurrState("Sign Up"); setIsDataSubmitted(false) }} className='font-medium text-blue-500 cursor-pointer'> Click Here</span></p>
           )}
         </div>
       </form>
