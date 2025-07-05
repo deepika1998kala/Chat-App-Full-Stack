@@ -39,9 +39,10 @@ const LoginPage = () => {
     <div className='min-h-screen bg-cover bg-center flex items-center justify-center gap-20 *:sm:justify-evenly max-sm:flex-col backdrop-blur-2xl'>
       {/* -------------------left------------------ */}
       <div>
-        
+      <img src={img.logo_big} alt="" className="w-[min(40vw,40px)] object-contain"' />  
+{/*       className="w-[min(40vw,40px)] object-contain" */}
 
-        <img src={img.logo_big} alt="" className='w-20px]' />
+{/*         <img src={img.logo_big} alt="" className='w-20px]' /> */}
         <h3 className='font-medium text-6xl flex justify-center items-center text-white'>ChatBox</h3>
       </div>
       {/* --------------------right--------------------- */}
