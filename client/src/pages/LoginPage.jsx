@@ -41,7 +41,7 @@ const LoginPage = () => {
       <div>
         
 
-        <img src={img.logo_big} alt="" className='w-40px]' />
+        <img src={img.logo_big} alt="" className='w-20px]' />
         <h3 className='font-medium text-6xl flex justify-center items-center text-white'>ChatBox</h3>
       </div>
       {/* --------------------right--------------------- */}
