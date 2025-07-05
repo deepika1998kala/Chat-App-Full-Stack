@@ -39,8 +39,8 @@ const LoginPage = () => {
     <div className='min-h-screen bg-cover bg-center flex items-center justify-center gap-20 *:sm:justify-evenly max-sm:flex-col backdrop-blur-2xl'>
       {/* -------------------left------------------ */}
       <div>
-        <img src={img.logo_big} alt="" className='w-[min(60vw, 60px)]' />
-        <h3 className='font-medium text-4xl flex justify-between items-center text-white'>ChatBox</h3>
+        <img src={img.logo_big} alt="" className='w-[min(50vw, 50px)]' />
+        <h3 className='font-medium text-4xl flex justify-center items-center text-white'>ChatBox</h3>
       </div>
       {/* --------------------right--------------------- */}
       <form onSubmit={onSubmitHandler} className='border-2 bg-white/8 text-white border-gray-500
